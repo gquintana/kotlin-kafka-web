@@ -65,6 +65,12 @@ class Server(properties: Properties) : AutoCloseable {
 					call.respond(topic)
 				}
 			}
+			get("/topics/{topic}/records") {
+				val topicName = call.parameters["topic"]!!
+				val beginOffset = call.request.queryParameters["beginOffset"]?.toLongOrNull()
+				val beginTimestamp = call.request.queryParameters["beginTimestamp"]?.toLongOrNull()
+				call.respond(recordService.getRecords(topicName, beginOffset, beginTimestamp))
+			}
 		}
 	}
 
