@@ -29,6 +29,7 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.2")
 	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
 	implementation("org.apache.kafka:kafka-clients:3.0.0")
+	implementation("org.apache.commons:commons-pool2:2.11.1")
 	runtimeOnly("ch.qos.logback:logback-classic:1.2.10")
 }
 
